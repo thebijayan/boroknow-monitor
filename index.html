@@ -125,6 +125,113 @@
 ```
 
 </div>
+<!-- NEWS FEEDS -->
+
+<div class="max-w-7xl mx-auto px-8 pb-10">
+
+```
+<h2 class="text-3xl font-bold mb-6">
+    📰 Live News Monitor
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+    <!-- National News -->
+    <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-xl font-bold mb-4">
+            🇮🇳 National News
+        </h3>
+
+        <div id="nationalNews">
+            Loading...
+        </div>
+    </div>
+
+    <!-- Tripura News -->
+    <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-xl font-bold mb-4">
+            🌐 Tripura News
+        </h3>
+
+        <div id="tripuraNews">
+            Loading...
+        </div>
+    </div>
+
+    <!-- Government News -->
+    <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-xl font-bold mb-4">
+            🏛️ Tripura Government
+        </h3>
+
+        <div id="govNews">
+            Loading...
+        </div>
+    </div>
+
+</div>
+```
+
+</div>
+
+<script>
+
+function loadFeed(feedUrl, containerId){
+
+    const api =
+    "https://api.rss2json.com/v1/api.json?rss_url="
+    + encodeURIComponent(feedUrl);
+
+    fetch(api)
+    .then(response => response.json())
+    .then(data => {
+
+        let html = "";
+
+        data.items.slice(0,10).forEach(item => {
+
+            html += `
+            <div class="mb-4 border-b pb-2">
+
+                <a
+                    href="${item.link}"
+                    target="_blank"
+                    class="font-medium text-blue-600 hover:underline"
+                >
+                    ${item.title}
+                </a>
+
+            </div>
+            `;
+        });
+
+        document.getElementById(containerId).innerHTML = html;
+
+    })
+    .catch(error => {
+
+        document.getElementById(containerId).innerHTML =
+        "Unable to load feed.";
+
+    });
+}
+
+loadFeed(
+"https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en",
+"nationalNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=Tripura&hl=en-IN&gl=IN&ceid=IN:en",
+"tripuraNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=Tripura+government&hl=en-IN&gl=IN&ceid=IN:en",
+"govNews"
+);
+
+</script>
 
 <script>
 function searchLinks() {
