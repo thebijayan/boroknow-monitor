@@ -2,46 +2,59 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borok Now Monitoring Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borok Now Monitoring Hub</title>
 
-    
 <meta name="robots" content="noindex,nofollow">
 
 <script src="https://cdn.tailwindcss.com"></script>
-
 
 </head>
 
 <body class="bg-slate-100">
 
+<!-- HEADER -->
+
+<header class="bg-slate-900 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-6">
+        <h1 class="text-4xl font-bold">
+            📰 Borok Now Monitoring Hub
+        </h1>
+
+```
+    <p class="text-slate-300 mt-2">
+        Internal News Source Dashboard
+    </p>
+</div>
+```
+
+</header>
+
+<!-- MAIN -->
+
 <div class="max-w-7xl mx-auto p-8">
 
 ```
+<!-- SEARCH -->
 <div class="mb-8">
-    <h1 class="text-4xl font-bold text-slate-900">
-        📰 Borok Now Monitoring Hub
-    </h1>
-
-    <p class="text-slate-600 mt-2">
-        Internal Source Monitoring Dashboard
-    </p>
-
     <input
         type="text"
         id="searchInput"
         placeholder="Search sources..."
-        class="mt-4 w-full p-3 rounded-lg border border-slate-300"
+        class="w-full p-4 rounded-xl border border-slate-300"
         onkeyup="searchLinks()"
     >
 </div>
 
+<!-- SOURCE CARDS -->
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <!-- Government -->
+    <!-- GOVERNMENT -->
     <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">🏛 Government</h2>
+        <h2 class="text-xl font-bold mb-4">
+            🏛 Government
+        </h2>
 
         <a href="https://www.facebook.com/CMofficeTripura" target="_blank" class="block text-blue-600 mb-2">
             CMO Tripura
@@ -56,9 +69,11 @@
         </a>
     </div>
 
-    <!-- TIPRA Motha -->
+    <!-- TIPRA MOTHA -->
     <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">🏹 TIPRA Motha</h2>
+        <h2 class="text-xl font-bold mb-4">
+            🏹 TIPRA Motha
+        </h2>
 
         <a href="https://www.facebook.com/TIPRAMothaParty" target="_blank" class="block text-blue-600 mb-2">
             TIPRA Motha Party
@@ -73,9 +88,11 @@
         </a>
     </div>
 
-    <!-- CPI(M) -->
+    <!-- CPIM -->
     <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">🔴 CPI(M)</h2>
+        <h2 class="text-xl font-bold mb-4">
+            🔴 CPI(M)
+        </h2>
 
         <a href="https://www.facebook.com/cpimtripuraofficialpage" target="_blank" class="block text-blue-600 mb-2">
             CPI(M) Tripura Official
@@ -86,27 +103,33 @@
         </a>
     </div>
 
-    <!-- Congress -->
+    <!-- CONGRESS -->
     <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">✋ Congress</h2>
+        <h2 class="text-xl font-bold mb-4">
+            ✋ Congress
+        </h2>
 
         <a href="https://www.facebook.com/INCTripura" target="_blank" class="block text-blue-600">
             Tripura Pradesh Congress Committee
         </a>
     </div>
 
-    <!-- Police -->
+    <!-- POLICE -->
     <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">🚔 Police & Emergency</h2>
+        <h2 class="text-xl font-bold mb-4">
+            🚔 Police & Emergency
+        </h2>
 
         <a href="https://tripurapolice.gov.in/" target="_blank" class="block text-blue-600">
             Tripura Police
         </a>
     </div>
 
-    <!-- Education -->
+    <!-- EDUCATION -->
     <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">🎓 Education</h2>
+        <h2 class="text-xl font-bold mb-4">
+            🎓 Education
+        </h2>
 
         <a href="https://www.tripurauniv.ac.in/" target="_blank" class="block text-blue-600 mb-2">
             Tripura University
@@ -125,7 +148,8 @@
 ```
 
 </div>
-<!-- NEWS FEEDS -->
+
+<!-- RSS NEWS SECTION -->
 
 <div class="max-w-7xl mx-auto px-8 pb-10">
 
@@ -136,7 +160,7 @@
 
 <div class="grid md:grid-cols-3 gap-6">
 
-    <!-- National News -->
+    <!-- NATIONAL -->
     <div class="bg-white rounded-xl shadow p-5">
         <h3 class="text-xl font-bold mb-4">
             🇮🇳 National News
@@ -147,7 +171,7 @@
         </div>
     </div>
 
-    <!-- Tripura News -->
+    <!-- TRIPURA -->
     <div class="bg-white rounded-xl shadow p-5">
         <h3 class="text-xl font-bold mb-4">
             🌐 Tripura News
@@ -158,10 +182,10 @@
         </div>
     </div>
 
-    <!-- Government News -->
+    <!-- GOVERNMENT -->
     <div class="bg-white rounded-xl shadow p-5">
         <h3 class="text-xl font-bold mb-4">
-            🏛️ Tripura Government
+            🏛 Tripura Government
         </h3>
 
         <div id="govNews">
@@ -176,11 +200,30 @@
 
 <script>
 
-function loadFeed(feedUrl, containerId){
+function searchLinks() {
+
+    let input = document.getElementById("searchInput");
+    let filter = input.value.toLowerCase();
+
+    let cards = document.getElementsByClassName("source-card");
+
+    for (let i = 0; i < cards.length; i++) {
+
+        let text = cards[i].innerText.toLowerCase();
+
+        if (text.includes(filter)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+function loadFeed(feedUrl, containerId) {
 
     const api =
-    "https://api.rss2json.com/v1/api.json?rss_url="
-    + encodeURIComponent(feedUrl);
+    "https://api.rss2json.com/v1/api.json?rss_url=" +
+    encodeURIComponent(feedUrl);
 
     fetch(api)
     .then(response => response.json())
@@ -188,20 +231,16 @@ function loadFeed(feedUrl, containerId){
 
         let html = "";
 
-        data.items.slice(0,10).forEach(item => {
+        data.items.slice(0, 8).forEach(item => {
 
             html += `
-            <div class="mb-4 border-b pb-2">
-
-                <a
-                    href="${item.link}"
-                    target="_blank"
-                    class="font-medium text-blue-600 hover:underline"
-                >
-                    ${item.title}
-                </a>
-
-            </div>
+                <div class="mb-3 border-b pb-2">
+                    <a href="${item.link}"
+                       target="_blank"
+                       class="text-blue-600 hover:underline">
+                       ${item.title}
+                    </a>
+                </div>
             `;
         });
 
@@ -211,7 +250,7 @@ function loadFeed(feedUrl, containerId){
     .catch(error => {
 
         document.getElementById(containerId).innerHTML =
-        "Unable to load feed.";
+        "Unable to load news feed.";
 
     });
 }
@@ -231,24 +270,6 @@ loadFeed(
 "govNews"
 );
 
-</script>
-
-<script>
-function searchLinks() {
-    let input = document.getElementById('searchInput');
-    let filter = input.value.toLowerCase();
-    let cards = document.getElementsByClassName('source-card');
-
-    for (let i = 0; i < cards.length; i++) {
-        let text = cards[i].innerText.toLowerCase();
-
-        if (text.includes(filter)) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
-        }
-    }
-}
 </script>
 
 </body>
