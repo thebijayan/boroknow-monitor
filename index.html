@@ -1,62 +1,148 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borok Now Monitoring Hub</title>
-    <meta name="robots" content="noindex,nofollow">
-    <script src="https://cdn.tailwindcss.com"></script>
+
+```
+<meta name="robots" content="noindex,nofollow">
+
+<script src="https://cdn.tailwindcss.com"></script>
+```
+
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-slate-100">
 
 <div class="max-w-7xl mx-auto p-8">
 
-    <h1 class="text-4xl font-bold mb-8">
+```
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-slate-900">
         📰 Borok Now Monitoring Hub
     </h1>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <p class="text-slate-600 mt-2">
+        Internal Source Monitoring Dashboard
+    </p>
 
-        <div class="bg-white p-5 rounded-xl shadow">
-            <h2 class="text-xl font-bold mb-4">
-                Government
-            </h2>
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search sources..."
+        class="mt-4 w-full p-3 rounded-lg border border-slate-300"
+        onkeyup="searchLinks()"
+    >
+</div>
 
-            <a href="https://www.facebook.com/CMofficeTripura" target="_blank" class="block text-blue-600">
-                CMO Tripura
-            </a>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <a href="https://www.facebook.com/drmaniksaha" target="_blank" class="block text-blue-600">
-                Dr. Manik Saha
-            </a>
-        </div>
+    <!-- Government -->
+    <div class="source-card bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold mb-4">🏛 Government</h2>
 
-        <div class="bg-white p-5 rounded-xl shadow">
-            <h2 class="text-xl font-bold mb-4">
-                Politics
-            </h2>
+        <a href="https://www.facebook.com/CMofficeTripura" target="_blank" class="block text-blue-600 mb-2">
+            CMO Tripura
+        </a>
 
-            <a href="#" class="block text-blue-600">
-                BJP Tripura
-            </a>
+        <a href="https://www.facebook.com/drmaniksaha" target="_blank" class="block text-blue-600 mb-2">
+            Dr. Manik Saha
+        </a>
 
-            <a href="#" class="block text-blue-600">
-                TIPRA Motha
-            </a>
-        </div>
+        <a href="https://www.facebook.com/mygovtripuraofficial" target="_blank" class="block text-blue-600">
+            MyGov Tripura
+        </a>
+    </div>
 
-        <div class="bg-white p-5 rounded-xl shadow">
-            <h2 class="text-xl font-bold mb-4">
-                Police & Emergency
-            </h2>
+    <!-- TIPRA Motha -->
+    <div class="source-card bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold mb-4">🏹 TIPRA Motha</h2>
 
-            <a href="#" class="block text-blue-600">
-                Tripura Police
-            </a>
-        </div>
+        <a href="https://www.facebook.com/TIPRAMothaParty" target="_blank" class="block text-blue-600 mb-2">
+            TIPRA Motha Party
+        </a>
 
+        <a href="https://www.facebook.com/PradyotBikramManikya" target="_blank" class="block text-blue-600 mb-2">
+            Pradyot Bikram Manikya
+        </a>
+
+        <a href="https://www.facebook.com/runieldebbarmaTipra" target="_blank" class="block text-blue-600">
+            Runiel Debbarma
+        </a>
+    </div>
+
+    <!-- CPI(M) -->
+    <div class="source-card bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold mb-4">🔴 CPI(M)</h2>
+
+        <a href="https://www.facebook.com/cpimtripuraofficialpage" target="_blank" class="block text-blue-600 mb-2">
+            CPI(M) Tripura Official
+        </a>
+
+        <a href="https://www.facebook.com/jitendra.chaudhury.org" target="_blank" class="block text-blue-600">
+            Jitendra Chaudhury
+        </a>
+    </div>
+
+    <!-- Congress -->
+    <div class="source-card bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold mb-4">✋ Congress</h2>
+
+        <a href="https://www.facebook.com/INCTripura" target="_blank" class="block text-blue-600">
+            Tripura Pradesh Congress Committee
+        </a>
+    </div>
+
+    <!-- Police -->
+    <div class="source-card bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold mb-4">🚔 Police & Emergency</h2>
+
+        <a href="https://tripurapolice.gov.in/" target="_blank" class="block text-blue-600">
+            Tripura Police
+        </a>
+    </div>
+
+    <!-- Education -->
+    <div class="source-card bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold mb-4">🎓 Education</h2>
+
+        <a href="https://www.tripurauniv.ac.in/" target="_blank" class="block text-blue-600 mb-2">
+            Tripura University
+        </a>
+
+        <a href="https://mbbuniversity.ac.in/" target="_blank" class="block text-blue-600 mb-2">
+            MBB University
+        </a>
+
+        <a href="https://www.nita.ac.in/" target="_blank" class="block text-blue-600">
+            NIT Agartala
+        </a>
     </div>
 
 </div>
+```
+
+</div>
+
+<script>
+function searchLinks() {
+    let input = document.getElementById('searchInput');
+    let filter = input.value.toLowerCase();
+    let cards = document.getElementsByClassName('source-card');
+
+    for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+
+        if (text.includes(filter)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
 
 </body>
 </html>
