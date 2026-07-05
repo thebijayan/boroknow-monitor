@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,192 +9,188 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
+<style>
+.news-item{
+    transition:0.2s;
+}
+.news-item:hover{
+    transform:translateY(-2px);
+}
+</style>
+
 </head>
 
 <body class="bg-slate-100">
 
 <!-- HEADER -->
-
 <header class="bg-slate-900 text-white shadow-lg">
     <div class="max-w-7xl mx-auto px-6 py-6">
         <h1 class="text-4xl font-bold">
             📰 Borok Now Monitoring Hub
         </h1>
 
-```
-    <p class="text-slate-300 mt-2">
-        Internal News Source Dashboard
-    </p>
-</div>
-```
-
+        <p class="text-slate-300 mt-2">
+            Internal News Source Dashboard
+        </p>
+    </div>
 </header>
 
 <!-- MAIN -->
-
 <div class="max-w-7xl mx-auto p-8">
 
-```
-<!-- SEARCH -->
-<div class="mb-8">
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search sources..."
-        class="w-full p-4 rounded-xl border border-slate-300"
-        onkeyup="searchLinks()"
-    >
+    <!-- SEARCH -->
+    <div class="mb-8">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search sources..."
+            class="w-full p-4 rounded-xl border border-slate-300"
+            onkeyup="searchLinks()"
+        >
+    </div>
+
+    <!-- SOURCE CARDS -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- GOVERNMENT -->
+        <div class="source-card bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl font-bold mb-4">🏛 Government</h2>
+
+            <a href="https://www.facebook.com/CMofficeTripura" target="_blank" class="block text-blue-600 mb-2">CMO Tripura</a>
+
+            <a href="https://www.facebook.com/drmaniksaha" target="_blank" class="block text-blue-600 mb-2">Dr. Manik Saha</a>
+
+            <a href="https://www.facebook.com/mygovtripuraofficial" target="_blank" class="block text-blue-600">MyGov Tripura</a>
+        </div>
+
+        <!-- TIPRA MOTHA -->
+        <div class="source-card bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl font-bold mb-4">🏹 TIPRA Motha</h2>
+
+            <a href="https://www.facebook.com/TIPRAMothaParty" target="_blank" class="block text-blue-600 mb-2">TIPRA Motha Party</a>
+
+            <a href="https://www.facebook.com/PradyotBikramManikya" target="_blank" class="block text-blue-600 mb-2">Pradyot Bikram Manikya</a>
+
+            <a href="https://www.facebook.com/runieldebbarmaTipra" target="_blank" class="block text-blue-600">Runiel Debbarma</a>
+        </div>
+
+        <!-- CPIM -->
+        <div class="source-card bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl font-bold mb-4">🔴 CPI(M)</h2>
+
+            <a href="https://www.facebook.com/cpimtripuraofficialpage" target="_blank" class="block text-blue-600 mb-2">CPI(M) Tripura Official</a>
+
+            <a href="https://www.facebook.com/jitendra.chaudhury.org" target="_blank" class="block text-blue-600">Jitendra Chaudhury</a>
+        </div>
+
+        <!-- CONGRESS -->
+        <div class="source-card bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl font-bold mb-4">✋ Congress</h2>
+
+            <a href="https://www.facebook.com/INCTripura" target="_blank" class="block text-blue-600">Tripura Congress</a>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="source-card bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl font-bold mb-4">🎓 Education</h2>
+
+            <a href="https://www.tripurauniv.ac.in/" target="_blank" class="block text-blue-600 mb-2">Tripura University</a>
+
+            <a href="https://mbbuniversity.ac.in/" target="_blank" class="block text-blue-600 mb-2">MBB University</a>
+
+            <a href="https://www.nita.ac.in/" target="_blank" class="block text-blue-600">NIT Agartala</a>
+        </div>
+
+        <!-- POLICE -->
+        <div class="source-card bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl font-bold mb-4">🚔 Police & Emergency</h2>
+
+            <a href="https://tripurapolice.gov.in/" target="_blank" class="block text-blue-600">Tripura Police</a>
+        </div>
+
+    </div>
 </div>
 
-<!-- SOURCE CARDS -->
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-    <!-- GOVERNMENT -->
-    <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">
-            🏛 Government
-        </h2>
-
-        <a href="https://www.facebook.com/CMofficeTripura" target="_blank" class="block text-blue-600 mb-2">
-            CMO Tripura
-        </a>
-
-        <a href="https://www.facebook.com/drmaniksaha" target="_blank" class="block text-blue-600 mb-2">
-            Dr. Manik Saha
-        </a>
-
-        <a href="https://www.facebook.com/mygovtripuraofficial" target="_blank" class="block text-blue-600">
-            MyGov Tripura
-        </a>
-    </div>
-
-    <!-- TIPRA MOTHA -->
-    <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">
-            🏹 TIPRA Motha
-        </h2>
-
-        <a href="https://www.facebook.com/TIPRAMothaParty" target="_blank" class="block text-blue-600 mb-2">
-            TIPRA Motha Party
-        </a>
-
-        <a href="https://www.facebook.com/PradyotBikramManikya" target="_blank" class="block text-blue-600 mb-2">
-            Pradyot Bikram Manikya
-        </a>
-
-        <a href="https://www.facebook.com/runieldebbarmaTipra" target="_blank" class="block text-blue-600">
-            Runiel Debbarma
-        </a>
-    </div>
-
-    <!-- CPIM -->
-    <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">
-            🔴 CPI(M)
-        </h2>
-
-        <a href="https://www.facebook.com/cpimtripuraofficialpage" target="_blank" class="block text-blue-600 mb-2">
-            CPI(M) Tripura Official
-        </a>
-
-        <a href="https://www.facebook.com/jitendra.chaudhury.org" target="_blank" class="block text-blue-600">
-            Jitendra Chaudhury
-        </a>
-    </div>
-
-    <!-- CONGRESS -->
-    <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">
-            ✋ Congress
-        </h2>
-
-        <a href="https://www.facebook.com/INCTripura" target="_blank" class="block text-blue-600">
-            Tripura Pradesh Congress Committee
-        </a>
-    </div>
-
-    <!-- POLICE -->
-    <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">
-            🚔 Police & Emergency
-        </h2>
-
-        <a href="https://tripurapolice.gov.in/" target="_blank" class="block text-blue-600">
-            Tripura Police
-        </a>
-    </div>
-
-    <!-- EDUCATION -->
-    <div class="source-card bg-white p-5 rounded-xl shadow">
-        <h2 class="text-xl font-bold mb-4">
-            🎓 Education
-        </h2>
-
-        <a href="https://www.tripurauniv.ac.in/" target="_blank" class="block text-blue-600 mb-2">
-            Tripura University
-        </a>
-
-        <a href="https://mbbuniversity.ac.in/" target="_blank" class="block text-blue-600 mb-2">
-            MBB University
-        </a>
-
-        <a href="https://www.nita.ac.in/" target="_blank" class="block text-blue-600">
-            NIT Agartala
-        </a>
-    </div>
-
-</div>
-```
-
-</div>
-
-<!-- RSS NEWS SECTION -->
-
+<!-- RSS SECTION -->
 <div class="max-w-7xl mx-auto px-8 pb-10">
 
-```
-<h2 class="text-3xl font-bold mb-6">
-    📰 Live News Monitor
-</h2>
+    <h2 class="text-3xl font-bold mb-6">
+        📰 Live News Monitor
+    </h2>
 
-<div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-    <!-- NATIONAL -->
-    <div class="bg-white rounded-xl shadow p-5">
-        <h3 class="text-xl font-bold mb-4">
-            🇮🇳 National News
-        </h3>
-
-        <div id="nationalNews">
-            Loading...
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🔥 Top Headlines</h3>
+            <div id="topNews">Loading...</div>
         </div>
-    </div>
 
-    <!-- TRIPURA -->
-    <div class="bg-white rounded-xl shadow p-5">
-        <h3 class="text-xl font-bold mb-4">
-            🌐 Tripura News
-        </h3>
-
-        <div id="tripuraNews">
-            Loading...
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🇮🇳 National</h3>
+            <div id="nationalNews">Loading...</div>
         </div>
-    </div>
 
-    <!-- GOVERNMENT -->
-    <div class="bg-white rounded-xl shadow p-5">
-        <h3 class="text-xl font-bold mb-4">
-            🏛 Tripura Government
-        </h3>
-
-        <div id="govNews">
-            Loading...
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🌐 Tripura</h3>
+            <div id="tripuraNews">Loading...</div>
         </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🏛 Government</h3>
+            <div id="govNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🗳 Politics</h3>
+            <div id="politicsNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🚔 Crime</h3>
+            <div id="crimeNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🎓 Education</h3>
+            <div id="educationNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">💼 Jobs</h3>
+            <div id="jobsNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">⚽ Sports</h3>
+            <div id="sportsNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🎬 Entertainment</h3>
+            <div id="entertainmentNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">📱 Technology</h3>
+            <div id="techNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🌍 Northeast</h3>
+            <div id="northeastNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🏹 Tribal Affairs</h3>
+            <div id="tribalNews">Loading...</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <h3 class="text-xl font-bold mb-4">🏛 TTAADC</h3>
+            <div id="adcNews">Loading...</div>
+        </div>
+
     </div>
-
-</div>
-```
-
 </div>
 
 <script>
@@ -207,19 +202,19 @@ function searchLinks() {
 
     let cards = document.getElementsByClassName("source-card");
 
-    for (let i = 0; i < cards.length; i++) {
+    for(let i=0;i<cards.length;i++){
 
         let text = cards[i].innerText.toLowerCase();
 
-        if (text.includes(filter)) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
+        if(text.includes(filter)){
+            cards[i].style.display="";
+        }else{
+            cards[i].style.display="none";
         }
     }
 }
 
-function loadFeed(feedUrl, containerId) {
+function loadFeed(feedUrl, containerId){
 
     const api =
     "https://api.rss2json.com/v1/api.json?rss_url=" +
@@ -229,20 +224,26 @@ function loadFeed(feedUrl, containerId) {
     .then(response => response.json())
     .then(data => {
 
-        let html = "";
+        let html="";
 
-        data.items.slice(0, 8).forEach(item => {
+        if(data.items){
 
-            html += `
-                <div class="mb-3 border-b pb-2">
+            data.items.slice(0,8).forEach(item=>{
+
+                html += `
+                <div class="news-item mb-3 border-b pb-2">
                     <a href="${item.link}"
-                       target="_blank"
-                       class="text-blue-600 hover:underline">
-                       ${item.title}
+                    target="_blank"
+                    class="text-blue-600 hover:underline text-sm">
+                    ${item.title}
                     </a>
                 </div>
-            `;
-        });
+                `;
+            });
+
+        }else{
+            html="No news available.";
+        }
 
         document.getElementById(containerId).innerHTML = html;
 
@@ -250,13 +251,18 @@ function loadFeed(feedUrl, containerId) {
     .catch(error => {
 
         document.getElementById(containerId).innerHTML =
-        "Unable to load news feed.";
+        "Unable to load feed.";
 
     });
 }
 
 loadFeed(
 "https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en",
+"topNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=India&hl=en-IN&gl=IN&ceid=IN:en",
 "nationalNews"
 );
 
@@ -268,6 +274,56 @@ loadFeed(
 loadFeed(
 "https://news.google.com/rss/search?q=Tripura+government&hl=en-IN&gl=IN&ceid=IN:en",
 "govNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=Tripura+politics&hl=en-IN&gl=IN&ceid=IN:en",
+"politicsNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=Tripura+crime&hl=en-IN&gl=IN&ceid=IN:en",
+"crimeNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=education+India&hl=en-IN&gl=IN&ceid=IN:en",
+"educationNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=government+jobs+India&hl=en-IN&gl=IN&ceid=IN:en",
+"jobsNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=sports+India&hl=en-IN&gl=IN&ceid=IN:en",
+"sportsNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=entertainment+India&hl=en-IN&gl=IN&ceid=IN:en",
+"entertainmentNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=technology+India&hl=en-IN&gl=IN&ceid=IN:en",
+"techNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=northeast+India&hl=en-IN&gl=IN&ceid=IN:en",
+"northeastNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=Tiprasa&hl=en-IN&gl=IN&ceid=IN:en",
+"tribalNews"
+);
+
+loadFeed(
+"https://news.google.com/rss/search?q=TTAADC&hl=en-IN&gl=IN&ceid=IN:en",
+"adcNews"
 );
 
 </script>
